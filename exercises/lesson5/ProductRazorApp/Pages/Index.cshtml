@@ -1,0 +1,26 @@
+﻿@page
+@using System.Globalization
+
+@functions {
+    public string? DayName { get; set; }
+    public void OnGet() 
+    {
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+        Model.DayName = DateTime.Now.ToString("dddd");
+        ViewData["Title"] = "Product Razor App";
+    }
+}
+
+
+<div class="mt-4 p-5 bg-primary text-white rounded">
+    <h1 class="display-3">Welcome to Product Razor App</h1>
+    <hr />
+
+    <p>
+        It's @Model.DayName!!! Time to learn Razor!
+    </p>
+    <p>
+        <a class="btn btn-secondary"
+            href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0" target="_blank">Learn Razor</a>
+    </p>
+</div>

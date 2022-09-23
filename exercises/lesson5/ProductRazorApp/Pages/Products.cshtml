@@ -1,0 +1,22 @@
+﻿@page
+@model ProductRazorApp.Pages.ProductsModel
+@{
+}
+
+<div class="row">
+
+    <h2>Products</h2>
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr><th>Products Table Razor App</th></tr>
+        </thead>
+        <tbody>
+            @if (Model.Products != null) {
+                @foreach (var pname in Model.Products) {
+                    <tr><td>@pname</td></tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
