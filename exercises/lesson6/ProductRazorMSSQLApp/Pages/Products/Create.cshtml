@@ -1,0 +1,35 @@
+﻿@page
+@model ProductRazorMSSQLApp.Pages.Products.CreateModel
+@{
+}
+
+<h2 class="mb-3">New Product</h2>
+@if (!Model.ErrorMessage.Equals("")) {
+    <h3><strong>@Model.ErrorMessage</strong></h3>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label for="description" class="col-md-1 col-form-label">Περιγραφή</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="description" id="description"
+                   placeholder="Enter description" value="@Model.ProductDTO.Description" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="quantity" class="col-md-1 col-form-label">Ποσότητα</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="quantity" id="quantity"
+                   placeholder="Enter quantity" value="@Model.ProductDTO.Quantity" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-md-1 col-md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-md-3 d-grid">
+            <a href="/" role="button" class="btn btn-outline-primary">Cancel</a>
+        </div>
+
+    </div>
+</form>
